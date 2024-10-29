@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
-import { clsx } from 'clsx';
+import { clsx } from "clsx";
 
 import { Providers } from "./providers";
 import Header from "../components/Header";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const inter = Inter({ subsets: ["latin"] });
-const noto = Noto_Sans_JP({subsets: ["latin"]})
+const noto = Noto_Sans_JP({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -39,7 +39,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="StudyScape" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={clsx([inter.className,noto.className])}>
+      <body className={clsx([inter.className, noto.className])}>
         <Providers>
           <Header />
           {children}
