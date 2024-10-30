@@ -1,6 +1,10 @@
 "use client";
 
 import {
+  Badge,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
   Table,
   TableBody,
   TableCell,
@@ -12,6 +16,7 @@ import {
 export interface TimetableData {
   id: string;
   table: string[][];
+  note?: { [key: number]: string };
 }
 
 interface TableRow {
@@ -74,10 +79,37 @@ const TimeTable: React.FC<{ timetableData: TimetableData }> = ({
         {rows.map((row) => (
           <TableRow key={row.key}>
             {columnKeys.map((columnKey) => {
-              const dataKey = columnKeys.indexOf(columnKey);
+              const dataKey = Number(
+                `${columnKeys.indexOf(columnKey) + 1}${row.key + 1}`,
+              );
+              if (timetableData.note) {
+                const note = timetableData.note[dataKey];
+                if (note) {
+                  return (
+                    <TableCell key={dataKey} className="text-lg">
+                      <Popover
+                        color="warning"
+                        showArrow={true}
+                        placement="right"
+                      >
+                        <PopoverTrigger>
+                          <Badge content="!" color="warning">
+                            {getCellValue(row, columnKeys.indexOf(columnKey))}
+                          </Badge>
+                        </PopoverTrigger>
+                        <PopoverContent>
+                          <div className="px-1 py-2">
+                            <div className="text-small">{note}</div>
+                          </div>
+                        </PopoverContent>
+                      </Popover>
+                    </TableCell>
+                  );
+                }
+              }
               return (
                 <TableCell key={dataKey} className="text-lg">
-                  {getCellValue(row, dataKey)}
+                  {getCellValue(row, columnKeys.indexOf(columnKey))}
                 </TableCell>
               );
             })}
