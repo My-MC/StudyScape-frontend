@@ -35,7 +35,7 @@ export default function Home() {
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
   return (
-    <div className="flex w-10/12 items-center mx-auto">
+    <div className="flex w-11/12 items-center mx-auto">
       {data && <TimeTable timetableData={data} />}
     </div>
   );
