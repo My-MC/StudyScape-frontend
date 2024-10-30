@@ -6,7 +6,6 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  User,
 } from "@nextui-org/react";
 
 import Account from "./Account";
