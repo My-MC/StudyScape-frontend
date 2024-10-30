@@ -73,11 +73,14 @@ const TimeTable: React.FC<{ timetableData: TimetableData }> = ({
       <TableBody>
         {rows.map((row) => (
           <TableRow key={row.key}>
-            {columnKeys.map((columnKey) => (
-              <TableCell key={columnKey} className="text-lg">
-                {getCellValue(row, columnKeys.indexOf(columnKey))}
-              </TableCell>
-            ))}
+            {columnKeys.map((columnKey) => {
+              const dataKey = columnKeys.indexOf(columnKey);
+              return (
+                <TableCell key={dataKey} className="text-lg">
+                  {getCellValue(row, dataKey)}
+                </TableCell>
+              );
+            })}
           </TableRow>
         ))}
       </TableBody>

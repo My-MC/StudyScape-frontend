@@ -69,20 +69,24 @@ export default function Pe() {
 
   return (
     <div className="flex w-11/12 items-center mx-auto">
-    <Table>
-      <TableHeader columns={columns}>
-        {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
-      </TableHeader>
-      <TableBody>
-        {convertPlacesData(places).map((row) => (
-          <TableRow key={row.key}>
-            {row.contents.map((cell, index) => (
-              <TableCell key={index}>{cell}</TableCell>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+      <Table>
+        <TableHeader columns={columns}>
+          {(column) => (
+            <TableColumn key={column.key}>{column.label}</TableColumn>
+          )}
+        </TableHeader>
+        <TableBody>
+          {convertPlacesData(places).map((row) => (
+            <TableRow key={row.key}>
+              {row.contents.map((cell, index) => (
+                <TableCell key={index} className="text-base">
+                  {cell}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   );
 }
