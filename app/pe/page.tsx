@@ -1,4 +1,5 @@
 "use client";
+import { type Account, useAccountStore } from "@/components/Account";
 import {
   Table,
   TableBody,
@@ -22,6 +23,18 @@ const convertPlacesData = (places: Places[]) => {
     };
   });
 };
+
+const temporaryAccount: Account = {
+  name: "Hanako Mihon",
+  email: "hanako@example.com",
+  classId: "1a",
+};
+
+useAccountStore.setState({
+  name: temporaryAccount.name,
+  email: temporaryAccount.email,
+  classId: temporaryAccount.classId,
+});
 
 export default function Pe() {
   const columns = [
@@ -58,13 +71,13 @@ export default function Pe() {
   // Example Data for Demo
   // prettier-ignore
   const places = [
-    {period: 1, placeList: ["第1体育館", "第2体育館", "第3グランド", "第2体育館下", "-", "-"]},
-    {period: 2, placeList: ["-", "第1体育館", "第2体育館", "第3グランド", "第2体育館下", "-"]},
-    {period: 3, placeList: ["-", "-", "第1体育館", "第2体育館", "第3グランド", "第2体育館下"]},
-    {period: 4, placeList: ["第2体育館下", "-", "-", "第1体育館", "第2体育館", "第3グランド"]},
-    {period: 5, placeList: ["第3グランド", "第2体育館下", "-", "-", "第1体育館", "第2体育館"]},
-    {period: 6, placeList: ["第2体育館", "第3グランド", "第2体育館下", "-", "-", "第1体育館"]},
-    {period: 7, placeList: ["第1体育館", "第2体育館", "第3グランド", "第2体育館下", "-", "-"]},
+    {period: 1, placeList: ["1体", "2体", "1G", "2体下", "-", "-"]},
+    {period: 2, placeList: ["-", "1体", "2体", "1G", "2体下", "-"]},
+    {period: 3, placeList: ["-", "-", "1体", "2体", "1G", "2体下"]},
+    {period: 4, placeList: ["2体下", "-", "-", "1体", "2体", "1G"]},
+    {period: 5, placeList: ["1G", "2体下", "-", "-", "1体", "2体"]},
+    {period: 6, placeList: ["2体", "1G", "2体下", "-", "-", "1体"]},
+    {period: 7, placeList: ["1体", "2体", "1G", "2体下", "-", "-"]},
   ];
 
   return (

@@ -73,7 +73,11 @@ const TimeTable: React.FC<{ timetableData: TimetableData }> = ({
   return (
     <Table aria-label="時間割">
       <TableHeader columns={columns}>
-        {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+        {(column) => (
+          <TableColumn key={column.key} className="w-1/6 text-center">
+            {column.label}
+          </TableColumn>
+        )}
       </TableHeader>
       <TableBody>
         {rows.map((row) => (
@@ -86,7 +90,10 @@ const TimeTable: React.FC<{ timetableData: TimetableData }> = ({
                 const note = timetableData.note[dataKey];
                 if (note) {
                   return (
-                    <TableCell key={dataKey} className="text-lg">
+                    <TableCell
+                      key={dataKey}
+                      className="w-1/6 text-lg text-center"
+                    >
                       <Popover
                         color="warning"
                         showArrow={true}
@@ -108,7 +115,7 @@ const TimeTable: React.FC<{ timetableData: TimetableData }> = ({
                 }
               }
               return (
-                <TableCell key={dataKey} className="text-lg">
+                <TableCell key={dataKey} className="text-lg text-center">
                   {getCellValue(row, columnKeys.indexOf(columnKey))}
                 </TableCell>
               );
