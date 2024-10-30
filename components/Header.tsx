@@ -9,7 +9,9 @@ import {
   User,
 } from "@nextui-org/react";
 
-const Header = () => {
+import Account from "./Account";
+
+export default function Header() {
   return (
     <Navbar>
       <NavbarBrand>
@@ -31,11 +33,9 @@ const Header = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <User name="Hanako Mihon" description="1-A hanako@example.com" />
+          <Account />
         </NavbarItem>
       </NavbarContent>
     </Navbar>
   );
-};
-
-export default Header;
+}
