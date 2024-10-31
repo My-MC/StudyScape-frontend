@@ -12,7 +12,7 @@ import Account from "./Account";
 
 export default function Header() {
   return (
-    <Navbar>
+    <Navbar height="10%">
       <NavbarBrand>
         <Link href="/" color="foreground">
           <p className="font-bold text-inherit">StudyScape</p>
@@ -27,6 +27,11 @@ export default function Header() {
         <NavbarItem>
           <Link href="/pe" color="foreground">
             P.E.
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link href="/board" color="foreground">
+            掲示板
           </Link>
         </NavbarItem>
       </NavbarContent>
