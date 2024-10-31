@@ -12,7 +12,7 @@ import Account from "./Account";
 
 export default function Header() {
   return (
-    <Navbar>
+    <Navbar height="10%">
       <NavbarBrand>
         <Link href="/" color="foreground">
           <p className="font-bold text-inherit">StudyScape</p>

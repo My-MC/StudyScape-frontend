@@ -41,8 +41,10 @@ export default function RootLayout({
       </head>
       <body className={clsx([inter.className, noto.className])}>
         <Providers>
-          <Header />
-          {children}
+          <div className="h-lvh">
+            <Header />
+            <div className="h-[90%]"> {children}</div>
+          </div>
         </Providers>
       </body>
     </html>
