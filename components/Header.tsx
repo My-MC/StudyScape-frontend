@@ -18,7 +18,7 @@ export default function Header() {
           <p className="font-bold text-inherit">StudyScape</p>
         </Link>
       </NavbarBrand>
-      <NavbarContent className="sm:flex gap-8" justify="start">
+      <NavbarContent className="gap-8 sm:flex" justify="start">
         <NavbarItem>
           <Link href="/" color="foreground">
             Home

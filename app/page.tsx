@@ -4,8 +4,8 @@ import useSWR, { Fetcher } from "swr";
 
 import { useAccountStore, type Account } from "@/components/Account";
 
-import TimeTable from "@/components/TimeTable";
 import type { TimetableData } from "@/components/TimeTable";
+import TimeTable from "@/components/TimeTable";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const fetcher: Fetcher<TimetableData, string> = (...args) => {
@@ -54,7 +54,7 @@ export default function Home() {
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
   return (
-    <div className="flex w-11/12 items-center mx-auto">
+    <div className="mx-auto flex w-11/12 items-center">
       {data && <TimeTable timetableData={data} />}
     </div>
   );

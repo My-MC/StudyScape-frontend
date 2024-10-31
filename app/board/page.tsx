@@ -13,11 +13,11 @@ const boardData = [
 
 export default function Board() {
   return (
-    <div className="flex flex-col w-[90%] h-full mx-auto my-2 text-lg">
+    <div className="mx-auto my-2 flex h-full w-[90%] flex-col text-lg">
       {boardData.map((thread) => {
         return (
           <Link key={thread.id} href={`/board/${thread.id}`}>
-            <Card className="w-full h-15 my-1">
+            <Card className="h-15 my-1 w-full">
               <CardBody>
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
                   {thread.title}

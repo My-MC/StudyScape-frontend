@@ -92,7 +92,7 @@ const TimeTable: React.FC<{ timetableData: TimetableData }> = ({
                   return (
                     <TableCell
                       key={dataKey}
-                      className="w-1/6 text-lg text-center"
+                      className="w-1/6 text-center text-lg"
                     >
                       <Popover
                         color="warning"
@@ -115,7 +115,7 @@ const TimeTable: React.FC<{ timetableData: TimetableData }> = ({
                 }
               }
               return (
-                <TableCell key={dataKey} className="text-lg text-center">
+                <TableCell key={dataKey} className="text-center text-lg">
                   {getCellValue(row, columnKeys.indexOf(columnKey))}
                 </TableCell>
               );

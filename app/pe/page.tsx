@@ -81,7 +81,7 @@ export default function Pe() {
   ];
 
   return (
-    <div className="flex w-11/12 items-center mx-auto">
+    <div className="mx-auto flex w-11/12 items-center">
       <Table>
         <TableHeader columns={columns}>
           {(column) => (
