@@ -29,6 +29,11 @@ export default function Header() {
             P.E.
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link href="/board" color="foreground">
+            掲示板
+          </Link>
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
