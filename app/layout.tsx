@@ -1,9 +1,9 @@
+import { clsx } from "clsx";
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
-import { clsx } from "clsx";
 
-import { Providers } from "./providers";
 import Header from "../components/Header";
+import { Providers } from "./providers";
 
 import "./globals.css";
 

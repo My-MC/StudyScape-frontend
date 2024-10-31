@@ -44,7 +44,7 @@ export default function Board() {
   const id = Number(params.id) - 1;
 
   return (
-    <div className="flex w-[90%] h-full mx-auto space-x-2 my-2">
+    <div className="mx-auto my-2 flex h-full w-[90%] space-x-2">
       <div className="w-1/3">
         {boardData.map((thread) => {
           return (
@@ -53,7 +53,7 @@ export default function Board() {
               className="w-full"
               href={`/board/${thread.id}`}
             >
-              <Card className="w-full h-12 my-1">
+              <Card className="my-1 h-12 w-full">
                 <CardBody>
                   <p className="overflow-hidden text-ellipsis whitespace-nowrap">
                     {thread.title}
@@ -72,7 +72,7 @@ export default function Board() {
           {thread[id].content.map((content) => {
             return (
               <div key={content.id}>
-                <div className="w-full h-12 my-1">{content.content}</div>
+                <div className="my-1 h-12 w-full">{content.content}</div>
                 <Divider />
               </div>
             );
